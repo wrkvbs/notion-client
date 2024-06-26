@@ -125,6 +125,8 @@ pub enum PageProperty {
         id: Option<String>,
         verification: Option<VerificationPropertyValue>,
     },
+    #[serde(untagged)]
+    Other(serde_json::Value),
 }
 
 #[derive(Serialize, Deserialize, Debug, Eq, PartialEq, Clone)]
