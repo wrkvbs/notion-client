@@ -2,7 +2,7 @@ use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize, Clone, Debug, Eq, PartialEq)]
-#[serde(tag = "type", rename_all = "snake_case")]
+#[serde(untagged, rename_all = "snake_case")]
 pub enum File {
     External { external: ExternalFile },
     File { file: HostedFile },
