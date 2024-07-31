@@ -26,7 +26,7 @@ impl DatabasesEndpoint {
             .text()
             .await
             .map_err(|e| NotionClientError::FailedToText { source: e })?;
-
+        dbg!("Response body: {}", &body);
         let response = serde_json::from_str(&body)
             .map_err(|e| NotionClientError::FailedToDeserialize { source: e })?;
 
