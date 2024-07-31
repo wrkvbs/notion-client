@@ -23,7 +23,7 @@ pub struct Database {
     pub url: String,
     pub archived: bool,
     pub is_inline: bool,
-    pub public_url: Option<bool>,
+    pub public_url: Option<String>,
 }
 
 #[derive(Serialize, Deserialize, Debug, Eq, PartialEq, Clone, Default)]
